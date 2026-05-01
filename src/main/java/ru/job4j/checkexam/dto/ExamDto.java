@@ -1,4 +1,4 @@
-package ru.job4j.checkexam.model;
+package ru.job4j.checkexam.dto;
 
 import lombok.*;
 
@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Exam {
+public class ExamDto {
     private Long id;
     private String name;
 }
