@@ -50,13 +50,20 @@ public class SimpleUserExamService implements UserExamService {
                 ));
 
         List<ExamResponseDTO> resultList = results.stream()
-                        .map(userResult -> new ExamResponseDTO(
-                                userResult.getUserId(),
-                                userResult.getExamId(),
-                                examMap.get(userResult.getExamId())
-                        )).toList();
+                .map(userResult -> new ExamResponseDTO(
+                        userResult.getUserId(),
+                        userResult.getExamId(),
+                        examMap.get(userResult.getExamId())
+                )).toList();
 
 
         return resultList;
     }
+
+    @Override
+    public UserResult save(UserResult userResult) {
+        return userResultRepository.save(userResult);
+    }
+
+
 }
